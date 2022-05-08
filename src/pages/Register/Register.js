@@ -11,7 +11,7 @@ const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const handleEmailOnBlur = (event) => {
     setEmail(event.target.value);
