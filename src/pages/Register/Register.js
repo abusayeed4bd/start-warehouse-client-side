@@ -8,6 +8,7 @@ import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -19,8 +20,15 @@ const Register = () => {
   const handlePasswordOnBlur = (event) => {
     setPassword(event.target.value);
   };
+  const handleConfirmPasswordOnBlur = (event) => {
+    setConfirmPassword(event.target.value);
+  };
   const handleCreateAccount = (event) => {
     event.preventDefault();
+    if (password === confirmPassword) {
+      setErrorMessage("Password did not matched");
+      return;
+    }
     createUserWithEmailAndPassword(email, password);
   };
 
@@ -51,6 +59,7 @@ const Register = () => {
           <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control
+              onBlur={handleConfirmPasswordOnBlur}
               type="password"
               placeholder="Confirm Password"
               required
@@ -68,6 +77,7 @@ const Register = () => {
               Account Created Successfully
             </p>
           )}
+          <p className="text-center text-danger">{errorMessage}</p>
         </Form>
         <div>
           <p className="text-center my-4">
