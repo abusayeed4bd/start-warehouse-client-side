@@ -14,8 +14,8 @@ const Header = () => {
   return (
     <Navbar className="sticky-top" bg="light" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">
-          React-Bootstrap
+        <Navbar.Brand className="fw-bold" as={Link} to="/">
+          STAR WAREHOUSE
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="outline-0" id="basic-navbar-nav">
@@ -26,7 +26,7 @@ const Header = () => {
             <Nav.Link as={Link} to="/inventory">
               Inventory
             </Nav.Link>
-            <Nav.Link href="#link">About</Nav.Link>
+            <Nav.Link href="#link">Blog</Nav.Link>
             <Nav.Link href="#link">Contact</Nav.Link>
           </Nav>
           <Nav className="ms-auto">

@@ -11,6 +11,7 @@ const Item = () => {
   }, []);
   return (
     <div className="container">
+      <h2 className="text-center my-4 text-warning fs-1 fw-bold">Inventory</h2>
       <div className="row">
         {items.map((item) => (
           <SingleItem key={item._id} item={item}></SingleItem>

@@ -10,6 +10,8 @@ import IteamByParam from "./pages/ItemByParam/IteamByParam";
 import RequireAuth from "./RequireAuth/RequireAuth";
 import Inventory from "./pages/Invenory/Inventory";
 import AddItem from "./pages/AddItem/AddItem";
+import MyItem from "./pages/MyItem/MyItem";
+import Footer from "./pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -20,7 +22,15 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
-        <Route path="/add" element={<AddItem></AddItem>}></Route>
+        <Route
+          path="/add"
+          element={
+            <RequireAuth>
+              <AddItem></AddItem>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route path="/myitem" element={<MyItem></MyItem>}></Route>
         <Route
           path="/item/:id"
           element={
@@ -31,6 +41,7 @@ function App() {
         ></Route>
         <Route path="*" element={<NotFouond></NotFouond>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

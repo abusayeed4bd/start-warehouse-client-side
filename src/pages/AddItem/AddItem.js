@@ -1,10 +1,44 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
+
+  const handleAddItem = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const price = event.target.price.value;
+    const description = event.target.description.value;
+    const quantitiy = event.target.quantitiy.value;
+    const supplier = event.target.supplier.value;
+    const img = event.target.img.value;
+
+    fetch("http://localhost:5000/iteams", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        price,
+        description,
+        quantitiy,
+        supplier,
+        img,
+        uid: user.uid,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
     <div className="container bg-light p-4 w-50 mx-auto">
-      <Form>
+      <Form onSubmit={handleAddItem}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" name="name" placeholder="Enter Item Name" />

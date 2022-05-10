@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const IteamByParam = () => {
   const { id } = useParams();
@@ -16,53 +18,55 @@ const IteamByParam = () => {
   const handleUpdateQuantity = (event) => {
     event.preventDefault();
     const insertedQuantity = event.target.insertedQuantity.value;
-    console.log("inserted quantity", insertedQuantity);
-    const newQuantity = parseInt(insertedQuantity) + parseInt(quantitiy);
-    console.log("new quantity", newQuantity);
-    const url = `http://localhost:5000/iteam/${id}`;
-    fetch(url, {
-      method: "PUT",
-      body: JSON.stringify({
-        name: name,
-        img: img,
-        price: price,
-        quantitiy: newQuantity,
-        supplier: supplier,
-        description: description,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        setIsRelode(!isReload);
-      });
+    if (insertedQuantity > 0) {
+      const newQuantity = parseInt(insertedQuantity) + parseInt(quantitiy);
+      console.log("new quantity", newQuantity);
+      const url = `http://localhost:5000/iteam/${id}`;
+      fetch(url, {
+        method: "PUT",
+        body: JSON.stringify({
+          name: name,
+          img: img,
+          price: price,
+          quantitiy: newQuantity,
+          supplier: supplier,
+          description: description,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          setIsRelode(!isReload);
+        });
+    }
   };
   const handleDelivered = () => {
-    const newQuantity = parseInt(quantitiy) - 1;
-    console.log("new quantity", newQuantity);
-    const url = `http://localhost:5000/iteam/${id}`;
-    fetch(url, {
-      method: "PUT",
-      body: JSON.stringify({
-        name: name,
-        img: img,
-        price: price,
-        quantitiy: newQuantity,
-        supplier: supplier,
-        description: description,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        setIsRelode(!isReload);
-      });
+    if (quantitiy > 0) {
+      const newQuantity = parseInt(quantitiy) - 1;
+      const url = `http://localhost:5000/iteam/${id}`;
+      fetch(url, {
+        method: "PUT",
+        body: JSON.stringify({
+          name: name,
+          img: img,
+          price: price,
+          quantitiy: newQuantity,
+          supplier: supplier,
+          description: description,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          setIsRelode(!isReload);
+        });
+    }
   };
   return (
     <div className="container mt-5">
