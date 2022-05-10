@@ -25,10 +25,10 @@ const Register = () => {
   };
   const handleCreateAccount = (event) => {
     event.preventDefault();
-    if (password === confirmPassword) {
-      setErrorMessage("Password did not matched");
-      return;
-    }
+    // if (password === confirmPassword) {
+    //   setErrorMessage("Password did not matched");
+    //   return;
+    // }
     createUserWithEmailAndPassword(email, password);
   };
 

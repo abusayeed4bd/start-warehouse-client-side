@@ -3,6 +3,7 @@ import SingleItem from "../../Shared/SingleItem/SingleItem";
 
 const Item = () => {
   const [items, setItems] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:5000/iteams")
       .then((res) => res.json())
