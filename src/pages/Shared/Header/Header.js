@@ -26,7 +26,9 @@ const Header = () => {
             <Nav.Link as={Link} to="/inventory">
               Inventory
             </Nav.Link>
-            <Nav.Link href="#link">Blog</Nav.Link>
+            <Nav.Link as={Link} to="/blog">
+              Blog
+            </Nav.Link>
             <Nav.Link href="#link">Contact</Nav.Link>
           </Nav>
           <Nav className="ms-auto">

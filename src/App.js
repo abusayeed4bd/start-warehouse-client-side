@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home/Home";
@@ -12,6 +11,8 @@ import Inventory from "./pages/Invenory/Inventory";
 import AddItem from "./pages/AddItem/AddItem";
 import MyItem from "./pages/MyItem/MyItem";
 import Footer from "./pages/Shared/Footer/Footer";
+import Blog from "./pages/Blog/Blog";
+import ManageItem from "./pages/ManageItem/ManageItem";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
+        <Route path="/manage" element={<ManageItem></ManageItem>}></Route>
         <Route path="*" element={<NotFouond></NotFouond>}></Route>
       </Routes>
       <Footer></Footer>

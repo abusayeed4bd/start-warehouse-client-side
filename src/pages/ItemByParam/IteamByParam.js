@@ -9,7 +9,7 @@ const IteamByParam = () => {
   const [isReload, setIsRelode] = useState(true);
   const { _id, name, img, price, quantitiy, supplier, description } = item;
   useEffect(() => {
-    const url = `http://localhost:5000/iteam/${id}`;
+    const url = `https://radiant-dusk-12584.herokuapp.com/iteam/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItem(data));
@@ -21,7 +21,7 @@ const IteamByParam = () => {
     if (insertedQuantity > 0) {
       const newQuantity = parseInt(insertedQuantity) + parseInt(quantitiy);
       console.log("new quantity", newQuantity);
-      const url = `http://localhost:5000/iteam/${id}`;
+      const url = `https://radiant-dusk-12584.herokuapp.com/iteam/${id}`;
       fetch(url, {
         method: "PUT",
         body: JSON.stringify({
@@ -46,7 +46,7 @@ const IteamByParam = () => {
   const handleDelivered = () => {
     if (quantitiy > 0) {
       const newQuantity = parseInt(quantitiy) - 1;
-      const url = `http://localhost:5000/iteam/${id}`;
+      const url = `https://radiant-dusk-12584.herokuapp.com/iteam/${id}`;
       fetch(url, {
         method: "PUT",
         body: JSON.stringify({

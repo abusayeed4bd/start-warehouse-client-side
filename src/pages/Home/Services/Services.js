@@ -1,15 +1,16 @@
 import React from "react";
 import guy from "../../../image/guy-with-boxes.png";
 import { Link } from "react-router-dom";
+import "./Service.css";
 
 const Services = () => {
   return (
     <div className="container py-5">
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center service-container">
         <div className="w-50">
-          <img src={guy} alt="" />
+          <img className="service-img" src={guy} alt="" />
         </div>
-        <div className="w-50 mt-5">
+        <div className="w-50 w-sm-100 mt-5">
           <h2 className="display-6 fw-bold text-warning">
             We offer a wide variety of warehousing services
           </h2>

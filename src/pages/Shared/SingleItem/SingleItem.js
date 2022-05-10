@@ -10,7 +10,7 @@ const SingleItem = ({ item }) => {
   };
 
   return (
-    <div className="col-4">
+    <div className="col-lg-4 col-md-6 col-sm-12 mx-auto">
       <div className="card p-3">
         <img src={img} alt="" />
         <h2>{name}</h2>

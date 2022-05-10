@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
+import useItem from "../../../Hooks/useItem";
 import SingleItem from "../../Shared/SingleItem/SingleItem";
 
 const Item = () => {
-  const [items, setItems] = useState([]);
+  const [items] = useItem();
 
-  useEffect(() => {
-    fetch("http://localhost:5000/iteams")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  }, []);
   return (
     <div className="container">
       <h2 className="text-center my-4 text-warning fs-1 fw-bold">Inventory</h2>

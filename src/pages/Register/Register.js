@@ -34,7 +34,7 @@ const Register = () => {
 
   return (
     <div>
-      <div className="w-50 mx-auto bg-light p-4 my-3">
+      <div className="w-50 mx-auto bg-light p-4 my-3 form">
         <h2 className="text-center">Create account</h2>
         <Form onSubmit={handleCreateAccount}>
           <Form.Group className="mb-3" controlId="formBasicEmail">

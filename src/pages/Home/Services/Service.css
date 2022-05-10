@@ -1,0 +1,8 @@
+@media screen and (max-width: 1200px) {
+    .service-container{
+        flex-direction: column;
+    }
+    .service-img{
+        width: 100%;
+    }
+}

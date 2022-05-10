@@ -8,8 +8,8 @@ const Footer = () => {
           <div className="col-lg-6 col-md-6 col-sm-12">
             <h1>STAR WAREHOUSE</h1>
             <p>
-              lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit
-              amet, consectetur adip
+              Warehousing services for importers who distribute throughout North
+              America.
             </p>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12">
@@ -24,7 +24,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="col-lg-6 col-sm-12 col-md-6">
-                <h2>Pages</h2>
+                <h2>User's control</h2>
                 <ul>
                   <li>Login</li>
                   <li>Register</li>

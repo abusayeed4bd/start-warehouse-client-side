@@ -15,7 +15,7 @@ const AddItem = () => {
     const supplier = event.target.supplier.value;
     const img = event.target.img.value;
 
-    fetch("http://localhost:5000/iteams", {
+    fetch("https://radiant-dusk-12584.herokuapp.com/iteams", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -37,7 +37,8 @@ const AddItem = () => {
   };
 
   return (
-    <div className="container bg-light p-4 w-50 mx-auto">
+    <div className="container bg-light p-4 w-50 mx-auto form">
+      <h2 className="text-center">Add item</h2>
       <Form onSubmit={handleAddItem}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>
@@ -74,11 +75,7 @@ const AddItem = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="img">
           <Form.Label>Image</Form.Label>
-          <Form.Control
-            type="text"
-            name="img"
-            placeholder="Enter Supplier Name"
-          />
+          <Form.Control type="text" name="img" placeholder="Enter Image link" />
         </Form.Group>
 
         <Button variant="warning" className="w-100" type="submit">

@@ -1,4 +1,6 @@
-
+.page{
+  min-height: 80vh;
+}
 
 .App-logo {
   height: 40vmin;
