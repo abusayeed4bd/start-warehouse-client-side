@@ -1,6 +1,9 @@
 # Simple warehouse website with react js, mongodb and express
 
-Live Link [https://react-node-mongo-warehouse.web.app/](https://react-node-mongo-warehouse.web.app/).
+- Live Link [https://react-node-mongo-warehouse.web.app/](https://react-node-mongo-warehouse.web.app/).
+- client side code : [https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-abusayeed4bd](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-abusayeed4bd)
+- server side code [https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-abusayeed4bd.git](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-abusayeed4bd.git)
+
 
 ## Technology
 
