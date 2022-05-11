@@ -32,6 +32,7 @@ const AddItem = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        event.target.reset();
         console.log(data);
       });
   };

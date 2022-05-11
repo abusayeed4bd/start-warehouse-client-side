@@ -13,6 +13,7 @@ import MyItem from "./pages/MyItem/MyItem";
 import Footer from "./pages/Shared/Footer/Footer";
 import Blog from "./pages/Blog/Blog";
 import ManageItem from "./pages/ManageItem/ManageItem";
+import Contact from "./pages/Home/Contact/Contact";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
+        <Route path="/contact" element={<Contact></Contact>}></Route>
+
         <Route
           path="/add"
           element={
@@ -31,7 +34,9 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path="/myitem" element={<MyItem></MyItem>}></Route>
+        <Route path="/myitem" element={<RequireAuth>
+          <MyItem></MyItem>
+        </RequireAuth>}></Route>
         <Route
           path="/item/:id"
           element={
@@ -41,7 +46,9 @@ function App() {
           }
         ></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
-        <Route path="/manage" element={<ManageItem></ManageItem>}></Route>
+        <Route path="/manage" element={<RequireAuth>
+          <ManageItem></ManageItem>
+        </RequireAuth>}></Route>
         <Route path="*" element={<NotFouond></NotFouond>}></Route>
       </Routes>
       <Footer></Footer>

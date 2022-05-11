@@ -14,26 +14,42 @@ import auth from "../../firebase.init";
 
 const Login = () => {
   const [user] = useAuthState(auth);
-  const [sendPasswordResetEmail, sending, error] =
+  const [sendPasswordResetEmail, sending] =
     useSendPasswordResetEmail(auth);
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  
+    const [
+      signInWithEmailAndPassword,
+      user1,
+      loading,
+      error,
+    ] = useSignInWithEmailAndPassword(auth);
+  const [errorMessage, setErrorMessage] =  useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
   const handleEmailOnBlur = (event) => {
     setEmail(event.target.value);
   };
   const handlePasswordOnBlur = (event) => {
     setPassword(event.target.value);
   };
+  
+  
+
   // require auth redirect
   let location = useLocation();
   let navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
 
+  
   const handleSingin = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
+    
   };
+  
+  
   if (user) {
     navigate(from, { replace: true });
   }
@@ -49,6 +65,7 @@ const Login = () => {
 
     sendPasswordResetEmail(email);
   };
+  
 
   return (
     <div className="w-50 mx-auto bg-light p-4 my-5 form">
@@ -77,7 +94,9 @@ const Login = () => {
         <Button className="w-100" variant="warning" type="submit">
           Login
         </Button>
+        
       </Form>
+      <p className="text-danger text-center my-3"> {error && error.message}</p>
       <div>
         <p className="text-center my-4">
           New to this website?

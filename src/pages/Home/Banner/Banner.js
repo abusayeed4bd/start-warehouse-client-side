@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import bannerImage from "../../../image/banner-img.png";
 import "./Banner.css";
 
@@ -12,7 +13,7 @@ const Banner = () => {
             America.
           </h2>
           {/* <h2 className="display-3 fw-bold text-warning">Warehouse</h2> */}
-          <button className="btn btn-warning text-white fs-5">
+          <button onClick={useNavigate("/inventory")} className="btn btn-warning text-white fs-5">
             Explore More
           </button>
         </div>

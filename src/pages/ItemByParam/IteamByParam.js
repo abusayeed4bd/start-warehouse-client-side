@@ -40,6 +40,7 @@ const IteamByParam = () => {
         .then((json) => {
           console.log(json);
           setIsRelode(!isReload);
+          event.target.reset();
         });
     }
   };
