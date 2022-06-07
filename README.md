@@ -24,6 +24,10 @@
 
 ## Available features
 
-- user can create account using email and google. if password is loast they can rest password
-- item can be update and new item can be added
-- user can see his added item and it can delete or update quatity
+- User login system with google firebase 
+- Secured Product order page With a private route, users must log in to access it.
+- All user has personal dashboard they can add reviews, see all orders and make payments using the card
+- special role for administration
+- admin can make new admin, add product, see all the order and update their profile
+- custom loading when product is fetching
+- form validation using react form hooks
