@@ -12,14 +12,14 @@ const Header = () => {
     signOut(auth);
   };
   return (
-    <Navbar className="sticky-top" bg="light" expand="lg">
+    <Navbar className="sticky-top shadow-sm" bg="white" expand="lg">
       <Container>
         <Navbar.Brand className="fw-bold" as={Link} to="/">
           STAR WAREHOUSE
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="outline-0" id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto fw-bold">
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>

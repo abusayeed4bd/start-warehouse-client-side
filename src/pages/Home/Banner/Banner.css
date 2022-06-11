@@ -1,23 +1,27 @@
-.banner{
+.banner {
     height: 90vh;
 }
 
 @media screen and (max-width: 745px) {
-    .banner{
+    .banner {
         flex-direction: column;
         height: 60vh;
-        
+
+
     }
-    .banner-img{
+
+    .banner-img {
         width: 100% !important;
         order: 1;
     }
-    .banner-text{
+
+    .banner-text {
         width: 100% !important;
         order: 2;
         text-align: center;
     }
-    .form{
-        width: 100%!important;
+
+    .form {
+        width: 100% !important;
     }
 }

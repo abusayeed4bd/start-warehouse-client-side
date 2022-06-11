@@ -9,10 +9,12 @@ const Inventory = () => {
   return (
     <div className="container text-center">
       <h2 className=" my-4 text-warning fs-1 fw-bold">Inventory</h2>
-      <div className="row">
-        {items.map((item) => (
-          <SingleItem key={item._id} item={item}></SingleItem>
-        ))}
+      <div className="">
+        <div className=" row">
+          {items.map((item) => (
+            <SingleItem key={item._id} item={item}></SingleItem>
+          ))}
+        </div>
       </div>
       <Link
         className="btn btn-warning text-white text-center my-5"
